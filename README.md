@@ -1,4 +1,4 @@
-# :wave: Algorithm
+# :wave: 스터디 매칭 서비스 Server
 ---
 ### 프로젝트 설정
 - Gradle
