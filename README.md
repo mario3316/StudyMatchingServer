@@ -49,3 +49,14 @@
       <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     ```
   - 클라이언트와 서버가 독립된 구조인 경우에는 CSRF를 적용하기 힘드므로 JWT를 대신 사용한다.
+
+### 발생 Issue
+
+- Lombok의 @RequiredArgsConstructor를 선언해도 Variable ~~ might not have been initialized 에러가 발생
+  - Lombok Plugin 설치후 Restart .......
+- Lombok not initialized in default constructor 에러
+  - build.gradle에 아래 dependency 추가
+  ```
+  compileOnly 'org.projectlombok:lombok'
+  annotationProcessor 'org.projectlombok:lombok'
+  ```
