@@ -1,11 +1,12 @@
 package com.studymatching.demo.service;
 
 import com.studymatching.demo.domain.UserInfo;
+import com.studymatching.demo.dto.UserInfoDto;
 import com.studymatching.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import main.java.com.studymatching.demo.dto.UserInfoDTO;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -16,15 +17,14 @@ public class UserService implements UserDetailsService {
     @Override
     // Email 로 유저를 찾아서 반환하는 method
     // UsernameNotFoundException : 찾는 유저가 없을때 발생하는 예외
-    public UserInfo loadUserByUserName(String email) throws UsernameNotFoundException {
+    public UserInfo loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException(email));
     }
 
-
-    //회원정보 저장
-    public Long save(UserInfoDTO infoDTO) {
+    //회원 정보 저장
+    public Long save(UserInfoDto infoDto) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        infoDTO.setPassword(encoder.encode(infoDTO.getPassword()));
+        infoDto.setPassword(encoder.encode(infoDto.getPassword()));
 
         return userRepository.save(UserInfo.builder()
                 .email(infoDto.getEmail())

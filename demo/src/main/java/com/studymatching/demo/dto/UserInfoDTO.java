@@ -1,12 +1,13 @@
-package main.java.com.studymatching.demo.dto;
+package com.studymatching.demo.dto;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 // 회원정보를 매핑 시킬 객체
-public class UserInfoDTO {
+public class UserInfoDto {
     private String email;
     private String password;
     private String auth;

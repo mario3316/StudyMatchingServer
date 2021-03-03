@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+</head>
+<body>
+<h1>회원 가입</h1>
+<hr>
+
+<form method="POST" th:action="@{/user}">
+    email : <input name="email" type="text"> <br>
+    password : <input name="password" type="password"> <br>
+    <input name="auth" type="radio" value="ROLE_ADMIN,ROLE_USER"> admin
+    <input checked="checked" name="auth" type="radio" value="ROLE_USER"> user <br>
+    <button type="submit">Join</button>
+</form>
+<br>
+
+<a href="/login">로그인 하기</a>
+</body>
+</html>

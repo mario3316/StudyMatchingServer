@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
+<body>
+<h1>로그인</h1>
+<hr>
+<img src="/img/ssafy.jpeg"/>
+
+<form action="/login" method="POST">
+    <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+    email : <input name="username" type="text"> <br>
+    password : <input name="password" type="password"> <br>
+    <button type="submit">Login</button>
+</form>
+<br>
+
+<div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+    <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
+</div>
+
+<a href="/signup">회원가입 →</a>
+</body>
+</html>

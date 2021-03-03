@@ -8,10 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -66,6 +63,11 @@ public class UserInfo implements UserDetails {
     @Override
     public boolean isAccountNonExpired() {
         return true; // true이면 휴면 계정 아님
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; // true 이면 잠금되지 않았음
     }
 
     @Override

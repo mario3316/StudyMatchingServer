@@ -1,5 +1,6 @@
 package com.studymatching.demo.config;
 
+import com.studymatching.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
