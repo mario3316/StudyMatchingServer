@@ -56,8 +56,19 @@
 - Lombok의 @RequiredArgsConstructor를 선언해도 Variable ~~ might not have been initialized 에러가 발생
   - Lombok Plugin 설치후 Restart .......
 - Lombok not initialized in default constructor 에러
+
   - build.gradle에 아래 dependency 추가
+
   ```
   compileOnly 'org.projectlombok:lombok'
   annotationProcessor 'org.projectlombok:lombok'
   ```
+
+- Hibernate "table ~~ does not exist" 에러
+  - application.properties 에 spring.jpa.hibernate.ddl-auto=create 를 추가해줘야 자동으로 테이블이 생성된다.
+
+### 메모
+
+- Ubuntu mysql
+  - 재시작 service mysql restart
+  - 상태 확인 service mysql status
