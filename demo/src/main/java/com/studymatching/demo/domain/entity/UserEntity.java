@@ -1,4 +1,4 @@
-package com.studymatching.demo.domain;
+package com.studymatching.demo.domain.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -17,7 +17,7 @@ import java.util.Set;
 @Entity
 @Getter
 
-public class UserInfo implements UserDetails {
+public class UserEntity implements UserDetails {
     @Id
     @Column(name = "code")
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 고유 코드 자동 생성
@@ -33,7 +33,7 @@ public class UserInfo implements UserDetails {
     private String auth;
 
     @Builder
-    public UserInfo(String email, String password, String auth) {
+    public UserEntity(String email, String password, String auth) {
         this.email = email;
         this.password = password;
         this.auth = auth;

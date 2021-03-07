@@ -1,6 +1,5 @@
-package com.studymatching.demo.repository;
+package com.studymatching.demo.domain.repository;
 
-import com.studymatching.demo.domain.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

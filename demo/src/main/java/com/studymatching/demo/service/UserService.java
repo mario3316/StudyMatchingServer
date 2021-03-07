@@ -1,8 +1,8 @@
 package com.studymatching.demo.service;
 
-import com.studymatching.demo.domain.UserInfo;
+import com.studymatching.demo.domain.entity.UserEntity;
+import com.studymatching.demo.domain.repository.UserRepository;
 import com.studymatching.demo.dto.UserInfoDto;
-import com.studymatching.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,7 +17,7 @@ public class UserService implements UserDetailsService {
     @Override
     // Email 로 유저를 찾아서 반환하는 method
     // UsernameNotFoundException : 찾는 유저가 없을때 발생하는 예외
-    public UserInfo loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserEntity loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException(email));
     }
 
