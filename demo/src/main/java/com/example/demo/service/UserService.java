@@ -1,8 +1,8 @@
-package com.studymatching.demo.service;
+package com.example.demo.service;
 
-import com.studymatching.demo.domain.entity.UserEntity;
-import com.studymatching.demo.domain.repository.UserRepository;
-import com.studymatching.demo.dto.UserInfoDto;
+import com.example.demo.domain.entity.UserEntity;
+import com.example.demo.domain.repository.UserRepository;
+import com.example.demo.dto.UserInfoDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

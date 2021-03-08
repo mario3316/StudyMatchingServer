@@ -1,4 +1,4 @@
-package com.studymatching.demo.config;
+package com.example.demo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -13,9 +13,5 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/admin").setViewName("admin");
         registry.addViewController("/signup").setViewName("signup");
-        registry.addViewController("/detail").setViewName("board/detail");
-        registry.addViewController("/list").setViewName("board/list");
-        registry.addViewController("/update").setViewName("board/update");
-        registry.addViewController("/write").setViewName("board/write");
     }
 }

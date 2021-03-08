@@ -1,4 +1,4 @@
-package com.studymatching.demo.domain.entity;
+package com.example.demo.domain.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -10,11 +10,11 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name = "board")
+@Table(name = "demo")
 public class BoardEntity extends TimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 10, nullable = false)

@@ -1,7 +1,6 @@
-package com.studymatching.demo.dto;
+package com.example.demo.dto;
 
-
-import com.studymatching.demo.domain.entity.BoardEntity;
+import com.example.demo.domain.entity.BoardEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -18,6 +17,16 @@ public class BoardDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
+    public BoardEntity toEntity(){
+        BoardEntity boardEntity = BoardEntity.builder()
+                .id(id)
+                .writer(writer)
+                .title(title)
+                .content(content)
+                .build();
+        return boardEntity;
+    }
+
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
@@ -26,15 +35,5 @@ public class BoardDto {
         this.content = content;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
-    }
-
-    public BoardEntity toEntity() {
-        BoardEntity boardEntity = BoardEntity.builder()
-                .id(id)
-                .writer(writer)
-                .title(title)
-                .content(content)
-                .build();
-        return boardEntity;
     }
 }

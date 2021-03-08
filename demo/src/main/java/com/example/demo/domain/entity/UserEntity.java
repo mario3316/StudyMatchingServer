@@ -1,4 +1,4 @@
-package com.studymatching.demo.domain.entity;
+package com.example.demo.domain.entity;
 
 import lombok.AccessLevel;
 import lombok.Builder;

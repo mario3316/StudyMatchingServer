@@ -1,7 +1,7 @@
-package com.studymatching.demo.controller;
+package com.example.demo.controller;
 
-import com.studymatching.demo.dto.UserInfoDto;
-import com.studymatching.demo.service.UserService;
+import com.example.demo.dto.UserInfoDto;
+import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;

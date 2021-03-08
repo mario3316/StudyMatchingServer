@@ -1,6 +1,6 @@
-package com.studymatching.demo.config;
+package com.example.demo.config;
 
-import com.studymatching.demo.service.UserService;
+import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -27,8 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {  //http 인증 설정
         http
                 .authorizeRequests()
-                .antMatchers("/login", "/signup", "/user", "/").permitAll() // 누구나 접근 가능
-                .antMatchers("/detail", "/list", "/update", "/write").hasRole("USER") // USER 권한 필요
+                .antMatchers("/login", "/signup", "/user", "/", "/post").permitAll() // 누구나 접근 가능
+                .antMatchers("/detail", "/update", "/write", "/post").hasRole("USER") // USER 권한 필요
                 .antMatchers("/admin").hasRole("ADMIN") // ADMIN 권한 필요
                 .anyRequest().authenticated() // 나머지 요청은 모두 권한 종류 상관없이 권한이 있어야 함
                 .and()

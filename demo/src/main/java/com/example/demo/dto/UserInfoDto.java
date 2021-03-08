@@ -1,4 +1,4 @@
-package com.studymatching.demo.dto;
+package com.example.demo.dto;
 
 
 import lombok.Getter;

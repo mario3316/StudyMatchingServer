@@ -1,6 +1,6 @@
-package com.studymatching.demo.domain.repository;
+package com.example.demo.domain.repository;
 
-import com.studymatching.demo.domain.entity.UserEntity;
+import com.example.demo.domain.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
